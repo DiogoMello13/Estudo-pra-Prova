@@ -1,0 +1,15 @@
+body{
+  background-image: linear-gradient(to right, #259ee9, #26d2df);
+}
+
+.inp{
+  background-color: #666666; color:white; height: 30px; width: 225px;
+}
+
+.excluir{
+  background-color: #ff2e2e; text-decoration: none; color: white; padding: 5px; height: 30px;
+}
+
+.editar{
+  background-color: #14db14; color: white; height: 30px;
+}

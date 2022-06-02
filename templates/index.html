@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montador de Elenco</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Jogadores do elenco</h1>
+  <form action='/add' method='POST'>
+    <input name='name' placeholder='Insira o nome do atleta'>
+    <input name='numeros' placeholder='Insira o número do atleta'>
+    <input name='posicao' placeholder='Insira a posição do atleta'>
+    <input name='caracter' placeholder='Insira as características do atleta'>
+    <button type='submit'>Confirmar </button>
+    
+  </form>
+
+    <ul>
+      {% for x in new_dados %}  
+      <li class="card">
+
+            <form action="/update/{{x.id}}" method='POST'>
+              <input class='inp' name="name" value="{{x.name}}">
+              <input class='inp' name="numeros" value="{{x.numeros}}">
+              <input class='inp' name="posicao" value="{{x.posicao}}">
+              <input class='inp' name="caracter" value="{{x.caracter}}">
+              <button class='editar' type="submit">Editar</button>
+              <a class='excluir' href='\delete\{{ x.id }}'>Excluir</a>
+            </form>
+          
+        </li>
+    
+      {% endfor %}
+    </ul>
+</body>
+</html>
